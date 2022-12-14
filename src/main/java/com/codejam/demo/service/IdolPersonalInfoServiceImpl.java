@@ -12,13 +12,6 @@ public class IdolPersonalInfoServiceImpl implements IdolPersonalInfoService {
     @Autowired
     private IdolPersonalInfoRepository idolPersonalInfoRepository;
 
-//    private final IdolPersonalInfoRepository idolPersonalInfoRepository;
-//
-//    @Autowired
-//    public IdolPersonalInfoServiceImpl(IdolPersonalInfoRepository idolPersonalInfoRepository) {
-//        this.idolPersonalInfoRepository = idolPersonalInfoRepository;
-//    }
-
     @Override
     public IdolPersonalInfo saveIdolPersonalInfo(IdolPersonalInfo idolPersonalInfo) {
         return idolPersonalInfoRepository.save(idolPersonalInfo);
@@ -26,7 +19,7 @@ public class IdolPersonalInfoServiceImpl implements IdolPersonalInfoService {
 
     @Override
     public IdolPersonalInfo updateIdolPersonalInfo(IdolPersonalInfo idolPersonalInfo) {
-        return null;
+        return idolPersonalInfoRepository.save(idolPersonalInfo);
     }
 
     @Override

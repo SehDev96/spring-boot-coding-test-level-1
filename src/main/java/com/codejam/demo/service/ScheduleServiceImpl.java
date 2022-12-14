@@ -11,14 +11,6 @@ public class ScheduleServiceImpl implements ScheduleService{
     @Autowired
     private ScheduleRepository scheduleRepository;
 
-//    private final ScheduleRepository scheduleRepository;
-//
-//    @Autowired
-//    public ScheduleServiceImpl(ScheduleRepository scheduleRepository) {
-//        this.scheduleRepository = scheduleRepository;
-//    }
-
-
     @Override
     public Schedule saveSchedule(Schedule schedule) {
         return scheduleRepository.save(schedule);
@@ -26,7 +18,7 @@ public class ScheduleServiceImpl implements ScheduleService{
 
     @Override
     public Schedule updateSchedule(Schedule schedule) {
-        return null;
+        return scheduleRepository.save(schedule);
     }
 
     @Override

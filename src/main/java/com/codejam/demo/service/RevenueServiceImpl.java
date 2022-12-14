@@ -11,14 +11,6 @@ public class RevenueServiceImpl implements RevenueService{
     @Autowired
     private RevenueRepository revenueRepository;
 
-//    private final RevenueRepository revenueRepository;
-//
-//    @Autowired
-//    public RevenueServiceImpl(RevenueRepository revenueRepository) {
-//        this.revenueRepository = revenueRepository;
-//    }
-
-
     @Override
     public Revenue saveRevenue(Revenue revenue) {
         return revenueRepository.save(revenue);
@@ -26,7 +18,7 @@ public class RevenueServiceImpl implements RevenueService{
 
     @Override
     public Revenue updateRevenue(Revenue revenue) {
-        return null;
+        return revenueRepository.save(revenue);
     }
 
     @Override

@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS PERSONAL_INFORMATION;
 CREATE TABLE PERSONAL_INFORMATION (
-    id int,
+    id int IDENTITY ,
     real_name varchar(50),
     idol_name varchar(60),
     address varchar(255),
@@ -9,7 +9,7 @@ CREATE TABLE PERSONAL_INFORMATION (
 
 DROP TABLE IF EXISTS SCHEDULE;
 CREATE TABLE SCHEDULE (
-    id int,
+    id int IDENTITY ,
     idol_personal_info_id int,
     venue varchar(50),
     event_name varchar(60),
@@ -18,7 +18,7 @@ CREATE TABLE SCHEDULE (
                       );
 DROP TABLE IF EXISTS REVENUE;
 CREATE TABLE REVENUE (
-    id int,
+    id int IDENTITY ,
     idol_personal_info_id int,
     monthly_rate varchar(50),
     date_time varchar(50),
