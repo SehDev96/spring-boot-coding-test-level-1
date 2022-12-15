@@ -24,12 +24,9 @@ public class DemoController {
 
     @GetMapping(path = "/get-todo-data")
     ResponseEntity<?> getTodoData() throws Exception{
-//        HttpHeaders httpHeaders = new HttpHeaders();
-//        httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         String url = "https://jsonplaceholder.typicode.com/todos/1";
         RestService restService = new RestService();
         return restService.getRequest(url);
-//        return restService.getRequest(httpHeaders,url);
     }
 
 }

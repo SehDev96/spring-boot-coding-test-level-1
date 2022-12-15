@@ -1,6 +1,8 @@
 package com.codejam.demo.service;
 
 import com.codejam.demo.interceptors.HttpRequestInterceptor;
+import com.codejam.demo.model.TodoResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,9 +26,10 @@ public class RestService {
         return new ResponseEntity<>(responseEntity.getBody(),responseEntity.getStatusCode());
     }
 
-    public ResponseEntity<?> getRequest(String url){
+    public ResponseEntity<?> getRequest(String url) throws Exception{
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url,String.class);
-        return new ResponseEntity<>(responseEntity.getBody(),responseEntity.getStatusCode());
+        TodoResponse todoResponse = new ObjectMapper().readValue(responseEntity.getBody(),TodoResponse.class);
+        return new ResponseEntity<>(todoResponse,responseEntity.getStatusCode());
     }
 
 
