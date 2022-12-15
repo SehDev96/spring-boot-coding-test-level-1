@@ -20,7 +20,7 @@ public class HttpRequestInterceptor implements ClientHttpRequestInterceptor {
 
     @Override
     public ClientHttpResponse intercept(HttpRequest httpRequest, byte[] bytes, ClientHttpRequestExecution clientHttpRequestExecution) throws IOException {
-        logRequest(httpRequest,bytes);
+        logRequest(httpRequest, bytes);
         ClientHttpResponse response = clientHttpRequestExecution.execute(httpRequest, bytes);
         logResponse(response);
         return response;

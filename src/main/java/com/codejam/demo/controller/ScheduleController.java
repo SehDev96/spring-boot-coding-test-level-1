@@ -25,19 +25,19 @@ public class ScheduleController {
     }
 
     @PostMapping(path = "/add")
-    public ResponseEntity<?> insertNewSchedule(@RequestBody Schedule schedule) throws Exception{
-        return new ResponseEntity<>(scheduleService.saveSchedule(schedule),HttpStatus.CREATED);
+    public ResponseEntity<?> insertNewSchedule(@RequestBody Schedule schedule) throws Exception {
+        return new ResponseEntity<>(scheduleService.saveSchedule(schedule), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/remove/{id}")
-    public ResponseEntity<?> deleteScheduleById(@PathVariable Integer id) throws Exception{
+    public ResponseEntity<?> deleteScheduleById(@PathVariable Integer id) throws Exception {
         scheduleService.deleteSchedule(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping(path = "/update")
-    public ResponseEntity<?> updateSchedule(@RequestBody Schedule schedule) throws Exception{
-        return new ResponseEntity<>(scheduleService.updateSchedule(schedule),HttpStatus.OK);
+    public ResponseEntity<?> updateSchedule(@RequestBody Schedule schedule) throws Exception {
+        return new ResponseEntity<>(scheduleService.updateSchedule(schedule), HttpStatus.OK);
     }
 
 }

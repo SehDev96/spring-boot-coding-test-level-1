@@ -17,24 +17,24 @@ public class RevenueController {
     private RevenueService revenueService;
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<?> getRevenueById(@PathVariable Integer id) throws Exception{
+    public ResponseEntity<?> getRevenueById(@PathVariable Integer id) throws Exception {
         return new ResponseEntity<>(revenueService.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(path = "/add")
-    public ResponseEntity<?> insertNewRevenue(@RequestBody Revenue revenue) throws Exception{
-        return new ResponseEntity<>(revenueService.saveRevenue(revenue),HttpStatus.CREATED);
+    public ResponseEntity<?> insertNewRevenue(@RequestBody Revenue revenue) throws Exception {
+        return new ResponseEntity<>(revenueService.saveRevenue(revenue), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/remove/{id}")
-    public ResponseEntity<?> deleteRevenueById(@PathVariable Integer id) throws Exception{
+    public ResponseEntity<?> deleteRevenueById(@PathVariable Integer id) throws Exception {
         revenueService.deleteRevenue(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping(path = "/update")
-    public ResponseEntity<?> updateRevenue(@RequestBody Revenue revenue) throws Exception{
-        return new ResponseEntity<>(revenueService.updateRevenue(revenue),HttpStatus.OK);
+    public ResponseEntity<?> updateRevenue(@RequestBody Revenue revenue) throws Exception {
+        return new ResponseEntity<>(revenueService.updateRevenue(revenue), HttpStatus.OK);
     }
 
 }

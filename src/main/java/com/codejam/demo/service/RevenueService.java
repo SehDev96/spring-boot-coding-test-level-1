@@ -2,7 +2,7 @@ package com.codejam.demo.service;
 
 import com.codejam.demo.model.Revenue;
 
-public interface RevenueService{
+public interface RevenueService {
 
     Revenue saveRevenue(Revenue revenue);
 

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface IdolPersonalInfoRepository extends JpaRepository<IdolPersonalInfo,Integer> {
+public interface IdolPersonalInfoRepository extends JpaRepository<IdolPersonalInfo, Integer> {
 
     @Query("select u from IdolPersonalInfo u where u.idol_name = :name")
     Optional<IdolPersonalInfo> findIdolPersonalInfoByIdolName(@Param("name") String name);
 
-    @Query(value = "select * from PERSONAL_INFORMATION order by rand() limit 1",nativeQuery = true)
+    @Query(value = "select * from PERSONAL_INFORMATION order by rand() limit 1", nativeQuery = true)
     Optional<IdolPersonalInfo> getRandomIdolPersonalInfo();
 }

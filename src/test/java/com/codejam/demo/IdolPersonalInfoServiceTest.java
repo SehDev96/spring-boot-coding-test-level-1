@@ -19,7 +19,7 @@ public class IdolPersonalInfoServiceTest {
     private IdolPersonalInfoService idolPersonalInfoService;
 
     @BeforeEach
-    public void addUsers(){
+    public void addUsers() {
         IdolPersonalInfo idolPersonalInfo = new IdolPersonalInfo();
         idolPersonalInfo.setIdol_status("INACTIVE");
         idolPersonalInfo.setIdol_name("MJ");

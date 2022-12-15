@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.CONFLICT)
 @Getter
-public class ResourceExistException  extends RuntimeException{
+public class ResourceExistException extends RuntimeException {
     private final String resourceName;
     private final String fieldName;
     private final String fieldValue;
 
-    public ResourceExistException(String resourceName, String fieldName, String fieldValue){
-        super(String.format("%s with %s :'%s' already exists!",resourceName, fieldName,fieldValue));
+    public ResourceExistException(String resourceName, String fieldName, String fieldValue) {
+        super(String.format("%s with %s :'%s' already exists!", resourceName, fieldName, fieldValue));
         this.resourceName = resourceName;
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;

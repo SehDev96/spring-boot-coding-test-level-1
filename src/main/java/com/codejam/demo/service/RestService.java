@@ -20,16 +20,16 @@ public class RestService {
         restTemplate.setInterceptors(Collections.singletonList(new HttpRequestInterceptor()));
     }
 
-    public ResponseEntity<?> getRequest(HttpHeaders headers, String url){
+    public ResponseEntity<?> getRequest(HttpHeaders headers, String url) {
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET,entity,String.class);
-        return new ResponseEntity<>(responseEntity.getBody(),responseEntity.getStatusCode());
+        ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        return new ResponseEntity<>(responseEntity.getBody(), responseEntity.getStatusCode());
     }
 
-    public ResponseEntity<?> getRequest(String url) throws Exception{
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url,String.class);
-        TodoResponse todoResponse = new ObjectMapper().readValue(responseEntity.getBody(),TodoResponse.class);
-        return new ResponseEntity<>(todoResponse,responseEntity.getStatusCode());
+    public ResponseEntity<?> getRequest(String url) throws Exception {
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+        TodoResponse todoResponse = new ObjectMapper().readValue(responseEntity.getBody(), TodoResponse.class);
+        return new ResponseEntity<>(todoResponse, responseEntity.getStatusCode());
     }
 
 
