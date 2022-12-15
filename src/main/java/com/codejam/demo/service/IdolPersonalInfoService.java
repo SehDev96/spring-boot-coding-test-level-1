@@ -10,5 +10,6 @@ public interface IdolPersonalInfoService {
 
     void deleteIdolPersonalInfo(Integer id);
 
-    IdolPersonalInfo findById(Integer id);
+    IdolPersonalInfo findById(Integer id) throws Exception;
+
 }

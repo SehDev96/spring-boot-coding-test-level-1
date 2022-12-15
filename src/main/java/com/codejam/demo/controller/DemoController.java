@@ -20,7 +20,6 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(path = "demo")
 public class DemoController {
 
-
     @GetMapping(path = "/unit-test")
     ResponseEntity<Integer> getUnitTestResult() throws Exception{
         return null;
