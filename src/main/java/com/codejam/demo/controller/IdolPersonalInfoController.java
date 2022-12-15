@@ -37,4 +37,9 @@ public class IdolPersonalInfoController {
         return new ResponseEntity<>(idolPersonalInfoService.updateIdolPersonalInfo(idolPersonalInfo),HttpStatus.OK);
     }
 
+    @GetMapping(path = "/random-info")
+    public ResponseEntity<?> randomPersonalInfo() throws Exception{
+        return new ResponseEntity<>(idolPersonalInfoService.getRandomIdolPersonalInfo(),HttpStatus.OK);
+    }
+
 }

@@ -12,4 +12,6 @@ public interface IdolPersonalInfoService {
 
     IdolPersonalInfo findById(Integer id) throws Exception;
 
+    IdolPersonalInfo getRandomIdolPersonalInfo();
+
 }

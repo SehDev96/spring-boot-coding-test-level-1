@@ -43,4 +43,9 @@ public class IdolPersonalInfoServiceImpl implements IdolPersonalInfoService {
         return idolPersonalInfo;
     }
 
+    @Override
+    public IdolPersonalInfo getRandomIdolPersonalInfo() {
+
+        return idolPersonalInfoRepository.getRandomIdolPersonalInfo().orElse(null);
+    }
 }

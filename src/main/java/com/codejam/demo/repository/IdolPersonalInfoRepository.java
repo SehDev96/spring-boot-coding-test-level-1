@@ -14,4 +14,7 @@ public interface IdolPersonalInfoRepository extends JpaRepository<IdolPersonalIn
 
     @Query("select u from IdolPersonalInfo u where u.idol_name = :name")
     Optional<IdolPersonalInfo> findIdolPersonalInfoByIdolName(@Param("name") String name);
+
+    @Query(value = "select * from PERSONAL_INFORMATION order by rand() limit 1",nativeQuery = true)
+    Optional<IdolPersonalInfo> getRandomIdolPersonalInfo();
 }
